@@ -19,7 +19,7 @@
       "command": [
         "bash",
         "-c",
-        "bundle exec rails db:migrate && bundle exec rails assets:precompile && bundle exec puma -C config/puma.rb"
+        "bundle exec rake ridgepole:apply && bundle exec rails assets:precompile && bundle exec puma -C config/puma.rb"
       ],
       "linuxParameters": null,
       "cpu": 0,

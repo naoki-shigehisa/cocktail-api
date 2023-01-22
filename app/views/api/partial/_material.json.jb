@@ -1,0 +1,9 @@
+return nil if material.nil?
+
+{
+  id: material.id,
+  name: material.name,
+  is_alcohol: material.is_alcohol,
+  created_at: material.created_at,
+  updated_at: material.updated_at,
+}

@@ -1,0 +1,5 @@
+create_table "materials", id: :bigint, unsigned: true, force: :cascade, options: "ENGINE=InnoDB ROW_FORMAT=DYNAMIC" do |t|
+  t.string "name", null: false
+  t.boolean "is_alcohol", default: false, null: false
+  t.timestamps
+end
