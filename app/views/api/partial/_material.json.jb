@@ -3,6 +3,8 @@ return nil if material.nil?
 {
   id: material.id,
   name: material.name,
+  name_en: material.name_en,
+  description: material.description,
   thumbnail_url: material.thumbnail_url,
   amazon_url: material.amazon_url,
   is_alcohol: material.is_alcohol,
