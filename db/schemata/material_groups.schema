@@ -1,0 +1,4 @@
+create_table "material_groups", id: :bigint, unsigned: true, force: :cascade, options: "ENGINE=InnoDB ROW_FORMAT=DYNAMIC" do |t|
+  t.string "name", null: false
+  t.timestamps
+end

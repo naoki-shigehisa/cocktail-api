@@ -1,9 +1,10 @@
 create_table "materials", id: :bigint, unsigned: true, force: :cascade, options: "ENGINE=InnoDB ROW_FORMAT=DYNAMIC" do |t|
   t.string "name", null: false
-  t.string "name_en"
-  t.text "description"
-  t.string "thumbnail_url"
-  t.string "amazon_url"
+  t.string "name_en", null: false
+  t.text "description", null: false
+  t.string "thumbnail_url", null: false
+  t.string "amazon_url", null: false
   t.boolean "is_alcohol", default: false, null: false
+  t.bigint "material_group_id", null: true
   t.timestamps
 end
