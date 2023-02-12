@@ -5,6 +5,6 @@ create_table "materials", id: :bigint, unsigned: true, force: :cascade, options:
   t.string "thumbnail_url", null: false
   t.string "amazon_url", null: false
   t.boolean "is_alcohol", default: false, null: false
-  t.bigint "material_group_id", null: true
+  t.bigint "material_group_id", null: false
   t.timestamps
 end

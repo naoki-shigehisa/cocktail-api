@@ -1,0 +1,3 @@
+{
+  material_groups: render(partial: 'api/partial/material_group', collection: @material_groups, as: :material_group)
+}

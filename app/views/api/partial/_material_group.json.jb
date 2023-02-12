@@ -1,0 +1,9 @@
+return nil if material_group.nil?
+
+{
+  id: material_group.id,
+  name: material_group.name,
+  materials: render(partial: 'api/partial/material', collection: material_group.materials, as: :material),
+  created_at: material_group.created_at,
+  updated_at: material_group.updated_at,
+}
