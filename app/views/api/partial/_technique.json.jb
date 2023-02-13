@@ -1,0 +1,9 @@
+return nil if technique.nil?
+
+{
+  id: technique.id,
+  name: technique.name,
+  description: technique.description,
+  created_at: technique.created_at,
+  updated_at: technique.updated_at,
+}

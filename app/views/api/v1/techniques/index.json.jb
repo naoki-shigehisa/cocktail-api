@@ -1,0 +1,3 @@
+{
+  techniques: render(partial: 'api/partial/technique', collection: @techniques, as: :technique)
+}
