@@ -1,0 +1,15 @@
+return nil if recipe_material.nil?
+
+{
+  id: recipe_material.id,
+  name: recipe_material.material.name,
+  name_en: recipe_material.material.name_en,
+  description: recipe_material.material.description,
+  thumbnail_url: recipe_material.material.thumbnail_url,
+  amazon_url: recipe_material.material.amazon_url,
+  is_alcohol: recipe_material.material.is_alcohol,
+  unit: recipe_material.material.unit,
+  amount: recipe_material.amount,
+  created_at: recipe_material.created_at,
+  updated_at: recipe_material.updated_at,
+}

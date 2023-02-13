@@ -5,5 +5,5 @@ create_table "recipe_steps", id: :bigint, unsigned: true, force: :cascade, optio
   t.string "thumbnail_url"
   t.timestamps
 
-  t.index ["recipe_id", "order"], name: "recipe_id_x_order"
+  t.index ["recipe_id", "order"], name: "idx_recipe_id_x_order"
 end

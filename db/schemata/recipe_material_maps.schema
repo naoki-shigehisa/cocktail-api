@@ -1,0 +1,9 @@
+create_table "recipe_material_maps", id: :bigint, unsigned: true, force: :cascade, options: "ENGINE=InnoDB ROW_FORMAT=DYNAMIC" do |t|
+  t.bigint "recipe_id", null: false, unsigned: true
+  t.bigint "material_id", null: false, unsigned: true
+  t.integer "amount", null: false
+  t.timestamps
+
+  t.index ["recipe_id"], name: "idx_recipe_id"
+  t.index ["material_id"], name: "idx_material_id"
+end

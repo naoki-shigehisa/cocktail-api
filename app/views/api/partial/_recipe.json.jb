@@ -5,6 +5,7 @@ return nil if recipe.nil?
   name: recipe.name,
   name_en: recipe.name_en,
   description: recipe.description,
+  recipe_materials: render(partial: 'api/partial/recipe_material', collection: recipe.recipe_material_maps, as: :recipe_material),
   recipe_steps: recipe.recipe_steps.order(:order),
   thumbnail_url: recipe.thumbnail_url,
   is_ice: recipe.is_ice,
