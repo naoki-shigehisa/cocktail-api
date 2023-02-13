@@ -5,4 +5,5 @@ namespace :v1 do
   resources :techniques, only: [:index]
   resources :colors, only: [:index]
   resources :tastes, only: [:index]
+  resources :types, only: [:index]
 end

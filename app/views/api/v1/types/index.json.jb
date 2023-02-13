@@ -1,0 +1,3 @@
+{
+  types: render(partial: 'api/partial/type', collection: @types, as: :type)
+}
