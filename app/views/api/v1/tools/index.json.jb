@@ -1,0 +1,3 @@
+{
+  tools: render(partial: 'api/partial/tool', collection: @tools, as: :tool)
+}

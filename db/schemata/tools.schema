@@ -1,0 +1,8 @@
+create_table "tools", id: :bigint, unsigned: true, force: :cascade, options: "ENGINE=InnoDB ROW_FORMAT=DYNAMIC" do |t|
+  t.string "name", null: false
+  t.string "name_en", null: false
+  t.text "description", null: false
+  t.string "thumbnail_url", null: false
+  t.string "amazon_url", null: false
+  t.timestamps
+end

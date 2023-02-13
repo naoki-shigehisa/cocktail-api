@@ -1,0 +1,12 @@
+return nil if tool.nil?
+
+{
+  id: tool.id,
+  name: tool.name,
+  name_en: tool.name_en,
+  description: tool.description,
+  thumbnail_url: tool.thumbnail_url,
+  amazon_url: tool.amazon_url,
+  created_at: tool.created_at,
+  updated_at: tool.updated_at,
+}
