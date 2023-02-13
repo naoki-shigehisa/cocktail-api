@@ -4,4 +4,5 @@ namespace :v1 do
   resources :tools, only: [:index]
   resources :techniques, only: [:index]
   resources :colors, only: [:index]
+  resources :tastes, only: [:index]
 end

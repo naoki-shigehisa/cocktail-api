@@ -1,0 +1,8 @@
+return nil if taste.nil?
+
+{
+  id: taste.id,
+  name: taste.name,
+  created_at: taste.created_at,
+  updated_at: taste.updated_at,
+}
