@@ -1,0 +1,3 @@
+{
+  recipe: render('api/partial/recipe', recipe: @recipe)
+}

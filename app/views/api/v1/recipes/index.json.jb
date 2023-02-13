@@ -1,0 +1,3 @@
+{
+  recipes: render(partial: 'api/partial/recipe', collection: @recipes, as: :recipe)
+}

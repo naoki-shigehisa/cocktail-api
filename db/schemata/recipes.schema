@@ -1,0 +1,13 @@
+create_table "recipes", id: :bigint, unsigned: true, force: :cascade, options: "ENGINE=InnoDB ROW_FORMAT=DYNAMIC" do |t|
+  t.string "name", null: false
+  t.string "name_en", null: false
+  t.text "description", null: false
+  t.string "thumbnail_url", null: false
+  t.boolean "is_ice", default: false, null: false
+  t.integer "alcohol", null: false, unsigned: true
+  t.bigint "technique_id", null: false, unsigned: true
+  t.bigint "type_id", null: false, unsigned: true
+  t.bigint "taste_id", null: false, unsigned: true
+  t.bigint "color_id", null: false, unsigned: true
+  t.timestamps
+end

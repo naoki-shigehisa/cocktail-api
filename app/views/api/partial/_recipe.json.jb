@@ -1,0 +1,17 @@
+return nil if recipe.nil?
+
+{
+  id: recipe.id,
+  name: recipe.name,
+  name_en: recipe.name_en,
+  description: recipe.description,
+  thumbnail_url: recipe.thumbnail_url,
+  is_ice: recipe.is_ice,
+  alcohol: recipe.alcohol,
+  technique: render('api/partial/technique', technique: recipe.technique),
+  type: render('api/partial/type', type: recipe.type),
+  taste: render('api/partial/taste', taste: recipe.taste),
+  color: render('api/partial/color', color: recipe.color),
+  created_at: recipe.created_at,
+  updated_at: recipe.updated_at,
+}
