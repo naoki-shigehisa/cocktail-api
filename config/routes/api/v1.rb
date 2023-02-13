@@ -3,4 +3,5 @@ namespace :v1 do
   resources :material_groups, only: [:index]
   resources :tools, only: [:index]
   resources :techniques, only: [:index]
+  resources :colors, only: [:index]
 end

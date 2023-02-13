@@ -1,0 +1,8 @@
+return nil if color.nil?
+
+{
+  id: color.id,
+  name: color.name,
+  created_at: color.created_at,
+  updated_at: color.updated_at,
+}

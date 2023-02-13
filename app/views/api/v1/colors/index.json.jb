@@ -1,0 +1,3 @@
+{
+  colors: render(partial: 'api/partial/color', collection: @colors, as: :color)
+}
