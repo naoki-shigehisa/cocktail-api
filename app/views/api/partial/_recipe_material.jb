@@ -10,6 +10,7 @@ return nil if recipe_material.nil?
   is_alcohol: recipe_material.material.is_alcohol,
   unit: recipe_material.material.unit,
   amount: recipe_material.amount,
+  is_option: recipe_material.is_option,
   created_at: recipe_material.created_at,
   updated_at: recipe_material.updated_at,
 }

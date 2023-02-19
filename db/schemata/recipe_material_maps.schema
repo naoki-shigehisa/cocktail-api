@@ -2,6 +2,7 @@ create_table "recipe_material_maps", id: :bigint, unsigned: true, force: :cascad
   t.bigint "recipe_id", null: false, unsigned: true
   t.bigint "material_id", null: false, unsigned: true
   t.integer "amount", null: false
+  t.boolean "is_option", null: false, default: false
   t.timestamps
 
   t.index ["recipe_id"], name: "idx_recipe_id"
