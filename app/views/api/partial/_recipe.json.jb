@@ -7,7 +7,7 @@ return nil if recipe.nil?
   description: recipe.description,
   recipe_materials: render(partial: 'api/partial/recipe_material', collection: recipe.recipe_material_maps, as: :recipe_material),
   recipe_steps: render(partial: 'api/partial/recipe_step', collection: recipe.recipe_steps.order(:order), as: :recipe_step),
-  tools: render(partial: 'api/partial/tool', collection: recipe.tools, as: :tool),
+  recipe_tools: render(partial: 'api/partial/recipe_tool', collection: recipe.recipe_tool_maps, as: :recipe_tool),
   thumbnail_url: recipe.thumbnail_url,
   is_ice: recipe.is_ice,
   alcohol: recipe.alcohol,

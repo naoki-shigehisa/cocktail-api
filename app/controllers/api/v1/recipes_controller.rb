@@ -1,6 +1,6 @@
 class Api::V1::RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all.preload(:color, :technique, :type, :taste, :tools, recipe_material_maps: [:material])
+    @recipes = Recipe.all.preload(:color, :technique, :type, :taste)
   end
 
   def show

@@ -7,7 +7,6 @@ return nil if tool.nil?
   description: tool.description,
   thumbnail_url: tool.thumbnail_url,
   amazon_url: tool.amazon_url,
-  is_glass: tool.is_glass,
   created_at: tool.created_at,
   updated_at: tool.updated_at,
 }

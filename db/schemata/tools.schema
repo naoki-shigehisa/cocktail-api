@@ -4,6 +4,5 @@ create_table "tools", id: :bigint, unsigned: true, force: :cascade, options: "EN
   t.text "description", null: false
   t.string "thumbnail_url", null: false
   t.string "amazon_url", null: false
-  t.boolean "is_glass", default: false, null: false
   t.timestamps
 end

@@ -1,6 +1,7 @@
 create_table "recipe_tool_maps", id: :bigint, unsigned: true, force: :cascade, options: "ENGINE=InnoDB ROW_FORMAT=DYNAMIC" do |t|
   t.bigint "recipe_id", null: false, unsigned: true
   t.bigint "tool_id", null: false, unsigned: true
+  t.boolean "is_glass", default: false, null: false
   t.timestamps
 
   t.index ["recipe_id"], name: "idx_recipe_id"

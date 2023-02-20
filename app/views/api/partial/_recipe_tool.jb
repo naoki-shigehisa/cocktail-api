@@ -1,0 +1,13 @@
+return nil if recipe_tool.nil?
+
+{
+  id: recipe_tool.tool.id,
+  name: recipe_tool.tool.name,
+  name_en: recipe_tool.tool.name_en,
+  description: recipe_tool.tool.description,
+  thumbnail_url: recipe_tool.tool.thumbnail_url,
+  amazon_url: recipe_tool.tool.amazon_url,
+  is_glass: recipe_tool.is_glass,
+  created_at: recipe_tool.tool.created_at,
+  updated_at: recipe_tool.tool.updated_at,
+}
