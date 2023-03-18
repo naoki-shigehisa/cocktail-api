@@ -2,6 +2,7 @@ return nil if recipe_step.nil?
 
 {
   id: recipe_step.id,
+  order: recipe_step.order,
   content: recipe_step.content,
   thumbnail_url: recipe_step.thumbnail_url,
   created_at: recipe_step.created_at,
