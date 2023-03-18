@@ -8,6 +8,7 @@ return nil if recipe.nil?
   recipe_materials: render(partial: 'api/partial/recipe_material', collection: recipe.recipe_material_maps, as: :recipe_material),
   recipe_steps: render(partial: 'api/partial/recipe_step', collection: recipe.recipe_steps.order(:order), as: :recipe_step),
   recipe_tools: render(partial: 'api/partial/recipe_tool', collection: recipe.recipe_tool_maps, as: :recipe_tool),
+  glass: render('api/partial/recipe_tool', recipe_tool: recipe.recipe_tool_maps.filter { |recipe_tool_map| recipe_tool_map.is_glass }.first),
   thumbnail_url: recipe.thumbnail_url,
   is_ice: recipe.is_ice,
   alcohol: recipe.alcohol,
