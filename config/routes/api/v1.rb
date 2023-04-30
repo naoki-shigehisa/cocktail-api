@@ -1,7 +1,6 @@
 namespace :v1 do
-  resources :recipes, only: [:index, :show] do
-    get '/latests', to: 'recipes#latests'
-  end
+  get '/recipes/latests', to: 'recipes#latests'
+  resources :recipes, only: [:index, :show]
   resources :materials, only: [:index, :show]
   resources :material_groups, only: [:index]
   resources :tools, only: [:index]
