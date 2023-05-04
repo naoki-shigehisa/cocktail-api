@@ -2,7 +2,7 @@ class Api::V1::RecipesController < ApplicationController
   LATEST_RECIPE_LIMIT = 10
 
   def index
-    @recipes = Recipe.all.preload(:color, :technique, :type, :taste)
+    @recipes = Recipe.all.preload(recipe_material_maps: [:material])
   end
 
   def show
@@ -11,7 +11,7 @@ class Api::V1::RecipesController < ApplicationController
 
   def latests
     @recipes = Recipe
-      .preload(:color, :technique, :type, :taste)
+      .preload(recipe_material_maps: [:material])
       .order(created_at: :desc)
       .limit(LATEST_RECIPE_LIMIT)
   end
