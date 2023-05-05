@@ -9,6 +9,7 @@ create_table "recipes", id: :bigint, unsigned: true, force: :cascade, options: "
   t.bigint "type_id", null: false, unsigned: true
   t.bigint "taste_id", null: false, unsigned: true
   t.bigint "color_id", null: false, unsigned: true
+  t.boolean "is_draft", null: false, default: false
   t.timestamps
 
   t.index ["created_at"], name: "idx_created_at"

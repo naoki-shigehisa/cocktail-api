@@ -6,4 +6,6 @@ class Recipe < ApplicationRecord
   belongs_to :technique
   belongs_to :type
   belongs_to :taste
+
+  scope :active, -> { where(is_draft: false) }
 end
