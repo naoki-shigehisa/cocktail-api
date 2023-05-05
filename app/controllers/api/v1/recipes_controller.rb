@@ -15,4 +15,8 @@ class Api::V1::RecipesController < ApplicationController
       .order(created_at: :desc)
       .limit(LATEST_RECIPE_LIMIT)
   end
+
+  def count
+    @recipes_count = Recipe.count
+  end
 end
