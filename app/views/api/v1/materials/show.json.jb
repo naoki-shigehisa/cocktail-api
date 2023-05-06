@@ -1,3 +1,3 @@
 {
-  material: render('api/partial/material', material: @material)
+  material: render('api/partial/material', material: @material, material_recipes: @material_recipes)
 }

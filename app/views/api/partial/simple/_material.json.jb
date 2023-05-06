@@ -8,7 +8,6 @@ return nil if material.nil?
   thumbnail_url: material.thumbnail_url,
   amazon_url: material.amazon_url,
   is_alcohol: material.is_alcohol,
-  recipes: render(partial: 'api/partial/simple/recipe', collection: @material_recipes, as: :recipe),
   created_at: material.created_at,
   updated_at: material.updated_at,
 }
