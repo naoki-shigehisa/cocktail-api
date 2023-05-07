@@ -1,7 +1,7 @@
 return nil if recipe_material.nil?
 
 {
-  id: recipe_material.id,
+  id: recipe_material.material.id,
   name: recipe_material.material.name,
   name_en: recipe_material.material.name_en,
   description: recipe_material.material.description,
