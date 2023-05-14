@@ -3,6 +3,7 @@ namespace :v1 do
   get '/recipes/count', to: 'recipes#count'
   resources :recipes, only: [:index, :show]
 
+  get '/materials/random', to: 'materials#random'
   resources :materials, only: [:index, :show]
   resources :material_groups, only: [:index]
   
