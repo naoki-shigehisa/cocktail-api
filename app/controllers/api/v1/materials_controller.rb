@@ -1,4 +1,6 @@
 class Api::V1::MaterialsController < ApplicationController
+  RANDOM_MATERIALS_LIMIT = 10
+
   def index
     @materials = Material.all
   end
@@ -9,6 +11,6 @@ class Api::V1::MaterialsController < ApplicationController
   end
 
   def random
-    @materials = Material.shuffle(random: Random.new(Time.zone.now.beginning_of_day.to_i)).first(10)
+    @materials = Material.all.shuffle(random: Random.new(Time.zone.now.beginning_of_day.to_i)).first(RANDOM_MATERIALS_LIMIT)
   end
 end
