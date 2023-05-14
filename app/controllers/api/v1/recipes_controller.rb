@@ -1,5 +1,5 @@
 class Api::V1::RecipesController < ApplicationController
-  LATEST_RECIPE_LIMIT = 10
+  LATEST_RECIPE_LIMIT = 30
 
   def index
     @recipes = Recipe.all.preload(recipe_material_maps: [:material])
