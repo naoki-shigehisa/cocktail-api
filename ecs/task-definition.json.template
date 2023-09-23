@@ -49,6 +49,14 @@
           "value": "<Railsアプリのmaster.key>"
         },
         {
+          "name": "BASIC_AUTH_USER",
+          "value": "<管理画面のusername>"
+        },
+        {
+          "name": "BASIC_AUTH_PASSWORD",
+          "value": "<管理画面のpassword>"
+        },
+        {
           "name": "TZ",
           "value": "Japan"
         }
