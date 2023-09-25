@@ -45,6 +45,9 @@ gem "bootsnap", require: false
 # Use Sass to process CSS
 gem "sassc-rails"
 
+# Use tailwind
+gem "tailwindcss-rails"
+
 # Use haml
 gem 'haml-rails'
 

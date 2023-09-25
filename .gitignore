@@ -32,3 +32,6 @@
 
 # Ignore deploy task definition
 /ecs/task-definition.json
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
