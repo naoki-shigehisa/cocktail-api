@@ -23,6 +23,8 @@ RUN bundle install
 
 ADD . $APP_PATH
 
+RUN ./bin/rails tailwindcss:build
+
 # Nginxと通信を行うための準備
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
