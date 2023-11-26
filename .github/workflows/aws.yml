@@ -25,14 +25,25 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
-    - name: Build, tag, and push image to Amazon ECR
-      id: build-image
+    - name: Build, tag, and push app image to Amazon ECR
+      id: build-image-app
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: cocktail-api
         IMAGE_TAG: ${{ github.sha }}
       run: |
         docker build -f ecs/Dockerfile . -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+
+    - name: Build, tag, and push nginx image to Amazon ECR
+      id: build-image-nginx
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: cocktail-nginx
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        docker build ./nginx -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
@@ -43,17 +54,25 @@ jobs:
         echo "$ENV_TASK_DEFINITION" > task-definition.json
       working-directory: ecs
 
-    - name: Fill in the new image ID in the Amazon ECS task definition
-      id: task-def
+    - name: Fill in the new app image ID in the Amazon ECS task definition
+      id: task-def-filled-app-image
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: ecs/task-definition.json
         container-name: app
-        image: ${{ steps.build-image.outputs.image }}
+        image: ${{ steps.build-image-app.outputs.image }}
+
+    - name: Fill in the new nginx image ID in the Amazon ECS task definition
+      id: task-def-filled-nginx-image
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+        task-definition: ${{ steps.task-def-filled-app-image.outputs.task-definition }}
+        container-name: nginx
+        image: ${{ steps.build-image-nginx.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
-        task-definition: ${{ steps.task-def.outputs.task-definition }}
+        task-definition: ${{ steps.task-def-filled-nginx-image.outputs.task-definition }}
         service: cocktail-service
         cluster: cocktail-cluster
