@@ -23,8 +23,6 @@ RUN bundle install
 
 ADD . $APP_PATH
 
-RUN ./bin/rails tailwindcss:build
-
 # Nginxと通信を行うための準備
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
@@ -34,3 +32,5 @@ VOLUME $APP_PATH/tmp
 
 RUN yarn install --check-files
 RUN SECRET_KEY_BASE=placeholder bundle exec rails assets:precompile
+
+RUN bundle exec rails tailwindcss:build

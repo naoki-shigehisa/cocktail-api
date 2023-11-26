@@ -23,6 +23,7 @@ RUN bundle install
 
 ADD . $APP_PATH
 
-RUN ./bin/rails tailwindcss:build
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
+
+RUN bundle exec rails tailwindcss:build
