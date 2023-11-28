@@ -3,15 +3,15 @@
   %table.table-auto
     %thead
       %tr
-        %th Name
-        %th Name (English)
-        %th Thumbnail
+        %th.px-4.py-2 Name
+        %th.px-4.py-2 Name (English)
+        %th.px-4.py-2 Thumbnail
     %tbody
       - @recipes.each do |recipe|
         %tr
-          %td
+          %td.border.px-4.py-2
             = recipe.name
-          %td
+          %td.border.px-4.py-2
             = recipe.name_en
-          %td
-            = image_tag recipe.thumbnail_url, size: "50x30", alt: recipe.name
+          %td.border.px-4.py-2
+            = image_tag recipe.thumbnail_url, size: "50x60", alt: recipe.name
