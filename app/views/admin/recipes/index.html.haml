@@ -1,4 +1,17 @@
-.text
-  hello world
-
-= paginate @recipes
+.p-12
+  = paginate @recipes
+  %table.table-auto
+    %thead
+      %tr
+        %th Name
+        %th Name (English)
+        %th Thumbnail
+    %tbody
+      - @recipes.each do |recipe|
+        %tr
+          %td
+            = recipe.name
+          %td
+            = recipe.name_en
+          %td
+            = image_tag recipe.thumbnail_url, size: "50x30", alt: recipe.name
