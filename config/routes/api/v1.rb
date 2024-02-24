@@ -6,10 +6,14 @@ namespace :v1 do
   get '/materials/random', to: 'materials#random'
   resources :materials, only: [:index, :show]
   resources :material_groups, only: [:index]
-  
+
   resources :tools, only: [:index]
   resources :techniques, only: [:index]
   resources :colors, only: [:index]
   resources :tastes, only: [:index]
   resources :types, only: [:index]
+
+  namespace :search do
+    resources :recipes, only: [:index]
+  end
 end
