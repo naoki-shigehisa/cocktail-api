@@ -1,0 +1,48 @@
+.p-12
+  %h1.text-2xl.font-bold.mb-4
+    = @recipe.name
+  %p.mb-4
+    %span
+      Name (English):　
+    = @recipe.name_en
+  %p.mb-4
+    %span
+      Description:　
+    = @recipe.description
+  %p.mb-4
+    %span
+      Trivia:　
+    = @recipe.trivia
+  %p.mb-4
+    %span
+      Is Ice:　
+    = @recipe.is_ice
+  %p.mb-4
+    %span
+      Alcohol:　
+    = @recipe.alcohol
+  %p.mb-4
+    %span
+      Technique:　
+    = @recipe.technique.name
+  %p.mb-4
+    %span
+      Type:　
+    = @recipe.type.name
+  %p.mb-4
+    %span
+      Taste:　
+    = @recipe.taste.name
+  %p.mb-4
+    %span
+      Color:　
+    = @recipe.color.name
+  %p.mb-4
+    %span
+      Is Draft:　
+    = @recipe.is_draft
+  %p.mb-4
+    = image_tag @recipe.thumbnail_url, size: "50x60", alt: @recipe.name
+
+  = link_to 'Edit', edit_admin_recipe_path(@recipe), class: 'btn btn-primary'
+  = link_to 'Back', admin_recipes_path, class: 'btn btn-secondary'

@@ -1,0 +1,28 @@
+-# TBD
+
+.p-12
+  %h1.text-2xl.font-bold.mb-4
+    = @recipe.name
+  %p.mb-4
+    = @recipe.name_en
+  %p.mb-4
+    = @recipe.description
+  %p.mb-4
+    = @recipe.trivia
+  %p.mb-4
+    = @recipe.is_ice
+  %p.mb-4
+    = @recipe.alcohol
+  %p.mb-4
+    = @recipe.technique.name
+  %p.mb-4
+    = @recipe.type.name
+  %p.mb-4
+    = @recipe.taste.name
+  %p.mb-4
+    = @recipe.color.name
+  %p.mb-4
+    = @recipe.is_draft
+
+  = link_to 'Edit', edit_admin_recipe_path(@recipe), class: 'btn btn-primary'
+  = link_to 'Back', admin_recipes_path, class: 'btn btn-secondary'
