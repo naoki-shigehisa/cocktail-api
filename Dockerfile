@@ -11,8 +11,8 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.lis
 apt-get update && apt-get install -y yarn
 
 ENV APP_PATH /app
-ENV RAILS_ENV=production
-ENV NODE_ENV=production
+# ENV RAILS_ENV=production
+# ENV NODE_ENV=production
 
 RUN mkdir $APP_PATH
 WORKDIR $APP_PATH
@@ -28,5 +28,5 @@ ADD . $APP_PATH
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
 
-RUN SECRET_KEY_BASE=placeholder bundle exec rails tailwindcss:build
-RUN SECRET_KEY_BASE=placeholder bundle exec rails assets:precompile
+RUN bundle exec rails tailwindcss:build
+RUN bundle exec rails assets:precompile
