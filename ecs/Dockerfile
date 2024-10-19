@@ -33,5 +33,5 @@ VOLUME $APP_PATH/public
 VOLUME $APP_PATH/tmp
 
 RUN yarn install --check-files
-RUN bundle exec rails tailwindcss:build
-RUN bundle exec rails assets:precompile
+RUN SECRET_KEY_BASE=placeholder bundle exec rails tailwindcss:build
+RUN SECRET_KEY_BASE=placeholder bundle exec rails assets:precompile
