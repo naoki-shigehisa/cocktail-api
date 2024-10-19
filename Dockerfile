@@ -28,5 +28,5 @@ ADD . $APP_PATH
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
 
-RUN bundle exec rails tailwindcss:build
-RUN bundle exec rails assets:precompile
+RUN SECRET_KEY_BASE=placeholder bundle exec rails tailwindcss:build
+RUN SECRET_KEY_BASE=placeholder bundle exec rails assets:precompile
