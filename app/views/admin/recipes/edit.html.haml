@@ -1,28 +1,41 @@
--# TBD
-
 .p-12
-  %h1.text-2xl.font-bold.mb-4
-    = @recipe.name
-  %p.mb-4
-    = @recipe.name_en
-  %p.mb-4
-    = @recipe.description
-  %p.mb-4
-    = @recipe.trivia
-  %p.mb-4
-    = @recipe.is_ice
-  %p.mb-4
-    = @recipe.alcohol
-  %p.mb-4
-    = @recipe.technique.name
-  %p.mb-4
-    = @recipe.type.name
-  %p.mb-4
-    = @recipe.taste.name
-  %p.mb-4
-    = @recipe.color.name
-  %p.mb-4
-    = @recipe.is_draft
-
-  = link_to 'Edit', edit_admin_recipe_path(@recipe), class: 'btn btn-primary'
-  = link_to 'Back', admin_recipes_path, class: 'btn btn-secondary'
+  .max-w-2xl.mx-auto.bg-white.shadow-md.rounded-lg.p-6
+    %h1.text-2xl.font-bold.mb-4
+      = @recipe.name
+    .grid.grid-cols-1.gap-4.md:grid-cols-2
+      .bg-gray-100.p-4.rounded-lg
+        %span.font-bold
+          Name (English):　
+        = @recipe.name_en
+      .bg-gray-100.p-4.rounded-lg
+        %span.font-bold
+          Description:　
+        = @recipe.description
+      .bg-gray-100.p-4.rounded-lg
+        %span.font-bold
+          Trivia:　
+        = @recipe.trivia
+      .bg-gray-100.p-4.rounded-lg
+        %span.font-bold
+          Is Ice:　
+        = @recipe.is_ice
+      .bg-gray-100.p-4.rounded-lg
+        %span.font-bold
+          Alcohol:　
+        = @recipe.alcohol
+      .bg-gray-100.p-4.rounded-lg
+        %span.font-bold
+          Technique:　
+        = @recipe.technique.name
+      .bg-gray-100.p-4.rounded-lg
+        %span.font-bold
+          Type:　
+        = @recipe.type.name
+      .bg-gray-100.p-4.rounded-lg
+        %span.font-bold
+          Taste:　
+        = @recipe.taste.name
+      .bg-gray-100.p-4.rounded-lg
+        %span.font-bold
+          Color:　
+        = @recipe.color.name
