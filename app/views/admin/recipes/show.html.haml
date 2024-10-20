@@ -1,41 +1,72 @@
-.p-12
-  .max-w-2xl.mx-auto.bg-white.shadow-md.rounded-lg.p-6
-    %h1.text-2xl.font-bold.mb-4
-      = @recipe.name
-    .grid.grid-cols-1.gap-4.md:grid-cols-2
-      .bg-gray-100.p-4.rounded-lg
-        %span.font-bold
-          Name (English):　
-        = @recipe.name_en
-      .bg-gray-100.p-4.rounded-lg
-        %span.font-bold
-          Description:　
-        = @recipe.description
-      .bg-gray-100.p-4.rounded-lg
-        %span.font-bold
-          Trivia:　
-        = @recipe.trivia
-      .bg-gray-100.p-4.rounded-lg
-        %span.font-bold
-          Is Ice:　
-        = @recipe.is_ice
-      .bg-gray-100.p-4.rounded-lg
-        %span.font-bold
-          Alcohol:　
-        = @recipe.alcohol
-      .bg-gray-100.p-4.rounded-lg
-        %span.font-bold
-          Technique:　
-        = @recipe.technique.name
-      .bg-gray-100.p-4.rounded-lg
-        %span.font-bold
-          Type:　
-        = @recipe.type.name
-      .bg-gray-100.p-4.rounded-lg
-        %span.font-bold
-          Taste:　
-        = @recipe.taste.name
-      .bg-gray-100.p-4.rounded-lg
-        %span.font-bold
-          Color:　
-        = @recipe.color.name
+.container.mx-auto.p-4
+  .max-w-3xl.mx-auto.bg-white.shadow-lg.rounded-lg.overflow-hidden
+    .p-6
+      .flex.items-center.gap-4.mb-6
+        = image_tag @recipe.thumbnail_url, alt: @recipe.name, width: 100, height: 100, class: "rounded-lg"
+        .flex.flex-col
+          %h1.text-3xl.font-bold
+            = @recipe.name
+          %p.text-sm.text-gray-600
+            = @recipe.name_en
+
+      .grid.gap-4
+        .grid.gap-2
+          %h3.font-semibold Description
+          %p
+            = @recipe.description
+
+        .grid.gap-2
+          %h3.font-semibold Trivia
+          %p.text-sm
+            = @recipe.trivia
+
+        .grid.gap-2
+          %h3.font-semibold Characteristics
+          .flex.flex-wrap.gap-2
+            - characteristics = ["Alcohol: #{@recipe.alcohol}%", "Type: #{@recipe.type.name}", "Taste: #{@recipe.taste.name}", "Color: #{@recipe.color.name}", "Technique: #{@recipe.technique.name}", "Ice: #{@recipe.is_ice}"]
+            - characteristics.each do |char|
+              %span.inline-block.bg-gray-200.rounded-full.px-3.py-1.text-sm.font-semibold.text-gray-700= char
+
+-# .p-12
+-#   .max-w-2xl.mx-auto.bg-white.shadow-md.rounded-lg.p-6
+-#     %h1.text-2xl.font-bold.mb-4
+-#       = @recipe.name
+-#     %p.mb-4
+-#       = image_tag @recipe.thumbnail_url, size: "50x60", alt: @recipe.name
+-#     .grid.grid-cols-1.gap-4.md:grid-cols-2
+-#       .bg-gray-100.p-4.rounded-lg
+-#         %span.font-bold
+-#           Name (English):　
+-#         = @recipe.name_en
+-#       .bg-gray-100.p-4.rounded-lg
+-#         %span.font-bold
+-#           Description:　
+-#         = @recipe.description
+-#       .bg-gray-100.p-4.rounded-lg
+-#         %span.font-bold
+-#           Trivia:　
+-#         = @recipe.trivia
+-#       .bg-gray-100.p-4.rounded-lg
+-#         %span.font-bold
+-#           Is Ice:　
+-#         = @recipe.is_ice
+-#       .bg-gray-100.p-4.rounded-lg
+-#         %span.font-bold
+-#           Alcohol:　
+-#         = @recipe.alcohol
+-#       .bg-gray-100.p-4.rounded-lg
+-#         %span.font-bold
+-#           Technique:　
+-#         = @recipe.technique.name
+-#       .bg-gray-100.p-4.rounded-lg
+-#         %span.font-bold
+-#           Type:　
+-#         = @recipe.type.name
+-#       .bg-gray-100.p-4.rounded-lg
+-#         %span.font-bold
+-#           Taste:　
+-#         = @recipe.taste.name
+-#       .bg-gray-100.p-4.rounded-lg
+-#         %span.font-bold
+-#           Color:　
+-#         = @recipe.color.name
