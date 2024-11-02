@@ -24,9 +24,9 @@
                 %td.px-6.py-4.whitespace-nowrap
                   = image_tag recipe.thumbnail_url, class: 'h-12 w-12 rounded-full object-cover', alt: recipe.name
                 %td.px-6.py-4.whitespace-nowrap.text-sm.font-medium
-                  = link_to admin_recipe_path(recipe), class: 'text-indigo-600 hover:text-indigo-900 mr-3' do
+                  = link_to admin_recipe_path(recipe), class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-3' do
                     %i.fas.fa-eye.mr-1
                     表示
-                  = link_to edit_admin_recipe_path(recipe), class: 'text-indigo-600 hover:text-indigo-900' do
+                  = link_to edit_admin_recipe_path(recipe), class: 'bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded' do
                     %i.fas.fa-edit.mr-1
                     編集
